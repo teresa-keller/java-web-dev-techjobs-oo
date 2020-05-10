@@ -21,18 +21,18 @@ public void createJobObject() {
     @Test
     public void testSettingJobId() {
 
-        assertFalse(job1.getId() == job2.getId());
+        assertEquals(job2.getId(), job1.getId()+1);
 
     }
 
     @Test
     public void testJobConstructorSetsAllFields() {
-    Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-    assertEquals("Product tester", job3.getName());
-    assertEquals("ACME", job3.getEmployer().toString());
-    assertEquals("Desert", job3.getLocation().toString());
-    assertEquals("Quality control", job3.getPositionType().toString());
-    assertEquals("Persistence", job3.getCoreCompetency().toString());
+        Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("Product tester", job3.getName());
+        assertEquals("ACME", job3.getEmployer().toString());
+        assertEquals("Desert", job3.getLocation().toString());
+        assertEquals("Quality control", job3.getPositionType().toString());
+        assertEquals("Persistence", job3.getCoreCompetency().toString());
     }
 
     @Test
