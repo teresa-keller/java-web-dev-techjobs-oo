@@ -21,7 +21,7 @@ public void createJobObject() {
     @Test
     public void testSettingJobId() {
 
-        assertNotEquals(job1, job2);
+        assertFalse(job1.getId() == job2.getId());
 
     }
 
@@ -29,6 +29,21 @@ public void createJobObject() {
     public void testJobConstructorSetsAllFields() {
     Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
     assertEquals("Product tester", job3.getName());
+    assertEquals("ACME", job3.getEmployer().toString());
+    assertEquals("Desert", job3.getLocation().toString());
+    assertEquals("Quality control", job3.getPositionType().toString());
+    assertEquals("Persistence", job3.getCoreCompetency().toString());
+    }
+
+    @Test
+    public void testJobsForEquality() {
+
+        Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertNotSame(job4, job5);
+
+
+
     }
 
 }
