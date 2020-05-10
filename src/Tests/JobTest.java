@@ -41,9 +41,22 @@ public void createJobObject() {
         Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertNotSame(job4, job5);
+    }
 
+    @Test
+    public void testForBlankLineBeforeAndAfterString() {
+
+        Job job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals(" Product tester ", job6.toString());
+
+    }
+
+    @Test
+    public void testForLabelAndNewLineForEachField() {
 
 
     }
+
+
 
 }
