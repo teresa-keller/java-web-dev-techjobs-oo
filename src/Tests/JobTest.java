@@ -46,13 +46,14 @@ public void createJobObject() {
     @Test
     public void testForBlankLineBeforeAndAfterString() {
 
-        Job job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals(" Product tester ", job6.toString());
-
+        Job job6 = new Job();
+        assertTrue(job6.toString().startsWith('\n' + "ID:"));
     }
 
     @Test
     public void testForLabelAndNewLineForEachField() {
+
+
 
 
     }

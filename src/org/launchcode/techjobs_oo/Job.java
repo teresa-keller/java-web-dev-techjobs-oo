@@ -97,7 +97,7 @@ public class Job {
 
     @Override
     public String toString() {
-        return " " + name + " ";
+        return '\n' + "ID:" + " " + getId() + " " + '\n'  + "Name:" + " " + getName() + " " + '\n' + "Employer:" + " " + getEmployer() + " " + '\n' + "Location:" + " " + getLocation() + " " + '\n' + "Position Type:" + " " + getPositionType() + " " + '\n' + "Core Competency:" + " " + coreCompetency + " " + '\n';
     }
 
 
