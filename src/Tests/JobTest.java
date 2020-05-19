@@ -27,7 +27,9 @@ public void createJobObject() {
 
     @Test
     public void testJobConstructorSetsAllFields() {
+
         Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
         assertEquals("Product tester", job3.getName());
         assertEquals("ACME", job3.getEmployer().toString());
         assertEquals("Desert", job3.getLocation().toString());
@@ -40,21 +42,27 @@ public void createJobObject() {
 
         Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
         assertNotSame(job4, job5);
     }
 
     @Test
     public void testForBlankLineBeforeAndAfterString() {
 
-        Job job6 = new Job();
-        assertTrue(job6.toString().startsWith('\n' + "ID:"));
+        assertTrue(job1.toString().startsWith('\n' + "ID:"));
     }
 
     @Test
     public void testForLabelAndNewLineForEachField() {
 
+        Job job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-
+        assertTrue(job6.toString().contains('\n' + "ID:"));
+        assertTrue(job6.toString().contains('\n' + "Name:"));
+        assertTrue(job6.toString().contains('\n' + "Employer:"));
+        assertTrue(job6.toString().contains('\n' + "Location:"));
+        assertTrue(job6.toString().contains('\n' + "Position Type:"));
+        assertTrue(job6.toString().contains('\n' + "Core Competency:"));
 
     }
 
