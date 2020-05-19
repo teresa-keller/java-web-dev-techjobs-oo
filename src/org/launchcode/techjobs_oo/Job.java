@@ -7,7 +7,7 @@ public class Job {
     private int id;
     private static int nextId = 1;
 
-    private String name;
+    private String name = "Data not available";
     private Employer employer;
     private Location location;
     private PositionType positionType;
@@ -30,6 +30,7 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
@@ -97,8 +98,8 @@ public class Job {
 
     @Override
     public String toString() {
-        return '\n' + "ID:" + " " + getId() + " " + '\n'  + "Name:" + " " + getName() + " " + '\n' + "Employer:" + " " + getEmployer() + " " + '\n' + "Location:" + " " + getLocation() + " " + '\n' + "Position Type:" + " " + getPositionType() + " " + '\n' + "Core Competency:" + " " + coreCompetency + " " + '\n';
+
+
+        return '\n' + "ID:" + " " + getId() + " " + '\n' + "Name:" + " " + getName() + " " + '\n' + "Employer:" + " " + getEmployer() + " " + '\n' + "Location:" + " " + getLocation() + " " + '\n' + "Position Type:" + " " + getPositionType() + " " + '\n' + "Core Competency:" + " " + coreCompetency + " " + '\n';
+        }
     }
-
-
-}

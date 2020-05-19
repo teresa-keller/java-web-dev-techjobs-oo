@@ -64,6 +64,14 @@ public void createJobObject() {
         assertTrue(job6.toString().contains('\n' + "Position Type:"));
         assertTrue(job6.toString().contains('\n' + "Core Competency:"));
 
+        System.out.println(job6);
+    }
+    @Test
+    public void testForJobWithIDOnly() {
+
+    System.out.println(job2);
+
+//    assertEquals(job2.toString(), "OOPS! This job does not seem to exist.");
     }
 
 
