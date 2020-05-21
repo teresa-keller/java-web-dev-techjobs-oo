@@ -69,16 +69,15 @@ public void createJobObject() {
 
     @Test
     public void testForJobWithBlankStringInConstructor() {
-        Job job7 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job7 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
 
-        assertTrue(job7.toString().contains("Employer: Data not available"));
+        assertTrue(job7.toString().contains("Position Type: Data not available"));
 
     }
 
     @Test
     public void testForJobWithOnlyID() {
-
-//    assertEquals("OOPS! This job does not seem to exist.", job2.toString());
+    assertEquals("OOPS! This job does not seem to exist.", job2.toString());
     }
 
 }

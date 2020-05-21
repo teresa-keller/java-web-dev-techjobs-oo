@@ -7,16 +7,11 @@ public class Job {
     private int id;
     private static int nextId = 1;
 
-    private String name = "Data not available";
+    private String name;
     private Employer employer;
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
-
-    String employerName = "";
-    String locationName = "";
-    String positionTypeName = "";
-    String coreCompetencyName = "";
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -25,6 +20,7 @@ public class Job {
     public Job() {
         id = nextId;
         nextId++;
+        this.name = "ID only";
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
@@ -105,6 +101,10 @@ public class Job {
     @Override
     public String toString() {
 
-        return '\n' + "ID:" + " " + getId() + " " + '\n' + "Name:" + " " + getName() + " " + '\n' + "Employer:" + " " + getEmployer() + " " + '\n' + "Location:" + " " + getLocation() + " " + '\n' + "Position Type:" + " " + getPositionType() + " " + '\n' + "Core Competency:" + " " + coreCompetency + " " + '\n';
+        if (getName().equals("ID only")) {
+            return "OOPS! This job does not seem to exist.";
+        } else {
+            return '\n' + "ID:" + " " + getId() + " " + '\n' + "Name:" + " " + getName() + " " + '\n' + "Employer:" + " " + getEmployer() + " " + '\n' + "Location:" + " " + getLocation() + " " + '\n' + "Position Type:" + " " + getPositionType() + " " + '\n' + "Core Competency:" + " " + coreCompetency + " " + '\n';
         }
+    }
     }
