@@ -63,17 +63,22 @@ public void createJobObject() {
         assertTrue(job6.toString().contains('\n' + "Location:"));
         assertTrue(job6.toString().contains('\n' + "Position Type:"));
         assertTrue(job6.toString().contains('\n' + "Core Competency:"));
+    System.out.println(job6.getEmployer());
 
-        System.out.println(job6);
     }
+
     @Test
-    public void testForJobWithIDOnly() {
+    public void testForJobWithBlankStringInConstructor() {
+        Job job7 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-    System.out.println(job2);
+        assertTrue(job7.toString().contains("Employer: Data not available"));
 
-//    assertEquals(job2.toString(), "OOPS! This job does not seem to exist.");
     }
 
+    @Test
+    public void testForJobWithOnlyID() {
 
+//    assertEquals("OOPS! This job does not seem to exist.", job2.toString());
+    }
 
 }

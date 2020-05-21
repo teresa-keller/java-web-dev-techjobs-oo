@@ -21,9 +21,12 @@ public class CoreCompetency {
 
     @Override
     public String toString() {
-        return value;
+        if (value.equals("")) {
+            return "Data not available";
+        } else {
+            return value;
+        }
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

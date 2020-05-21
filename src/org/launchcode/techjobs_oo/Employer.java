@@ -10,6 +10,7 @@ public class Employer {
     public Employer() {
         id = nextId;
         nextId++;
+        this.value = "Data not available";
     }
 
     public Employer(String value) {
@@ -21,10 +22,12 @@ public class Employer {
 
     @Override
     public String toString() {
-
-        return value;
+        if (this.value.equals("")) {
+            return "Data not available";
+        } else {
+            return value;
+        }
     }
-
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
         if (this == o) return true;
@@ -45,10 +48,12 @@ public class Employer {
     }
 
     public String getValue() {
+
         return value;
     }
 
     public void setValue(String value) {
+
         this.value = value;
     }
 }

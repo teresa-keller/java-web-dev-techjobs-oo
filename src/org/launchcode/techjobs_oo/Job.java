@@ -13,6 +13,11 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
+    String employerName = "";
+    String locationName = "";
+    String positionTypeName = "";
+    String coreCompetencyName = "";
+
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
@@ -30,6 +35,7 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
 
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
@@ -98,7 +104,6 @@ public class Job {
 
     @Override
     public String toString() {
-
 
         return '\n' + "ID:" + " " + getId() + " " + '\n' + "Name:" + " " + getName() + " " + '\n' + "Employer:" + " " + getEmployer() + " " + '\n' + "Location:" + " " + getLocation() + " " + '\n' + "Position Type:" + " " + getPositionType() + " " + '\n' + "Core Competency:" + " " + coreCompetency + " " + '\n';
         }
