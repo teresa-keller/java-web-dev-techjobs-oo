@@ -48,8 +48,9 @@ public void createJobObject() {
 
     @Test
     public void testForBlankLineBeforeAndAfterString() {
+        Job job8 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        assertTrue(job1.toString().startsWith('\n' + "ID:"));
+        assertTrue(job8.toString().contains('\n' + "ID:" + " "));
     }
 
     @Test
